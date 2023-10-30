@@ -1,0 +1,44 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "ignoreFiles": ["./chp/static/**/*.css"],
+  "plugins": [
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-order",
+    "stylelint-scss",
+    "stylelint-z-index-value-constraint"
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "color-named": "never",
+    "font-weight-notation": "numeric",
+    "length-zero-no-unit": [
+      true,
+      {
+        "ignore": ["custom-properties"]
+      }
+    ],
+    "max-nesting-depth": 5,
+    "no-descending-specificity": null,
+    "import-notation": "string",
+    "order/properties-alphabetical-order": true,
+    "plugin/declaration-block-no-ignored-properties": true,
+    "plugin/z-index-value-constraint": {
+      "min": 0,
+      "max": 60
+    },
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignore": ["custom-elements"]
+      }
+    ],
+    "scss/at-import-no-partial-leading-underscore": true,
+    "scss/at-mixin-argumentless-call-parentheses": "always",
+    "scss/at-mixin-parentheses-space-before": "never",
+    "scss/at-rule-no-unknown": true,
+    "scss/at-rule-conditional-no-parentheses": false,
+    "scss/dollar-variable-colon-space-after": "always",
+    "string-quotes": "single",
+    "media-feature-range-notation": "prefix"
+  }
+}
