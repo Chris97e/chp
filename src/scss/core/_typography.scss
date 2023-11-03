@@ -12,8 +12,8 @@ $secondary-font: 'Poppins';
   font-style: normal;
   font-weight: 400;
   src:
-    url('/static/fonts/avenir/avenir-regular.woff2') format('woff2'),
-    url('/static/fonts/avenir/avenir-regular.woff') format('woff');
+    url('/public/fonts/avenir/avenir-regular.woff2') format('woff2'),
+    url('/public/fonts/avenir/avenir-regular.woff') format('woff');
   text-rendering: optimizelegibility;
 }
 
@@ -24,8 +24,8 @@ $secondary-font: 'Poppins';
   font-style: normal;
   font-weight: 600;
   src:
-    url('/static/fonts/avenir/avenir-semibold.woff2') format('woff2'),
-    url('/static/fonts/avenir/avenir-semibold.woff') format('woff');
+    url('/public/fonts/avenir/avenir-semibold.woff2') format('woff2'),
+    url('/public/fonts/avenir/avenir-semibold.woff') format('woff');
   text-rendering: optimizelegibility;
 }
 
@@ -36,8 +36,8 @@ $secondary-font: 'Poppins';
   font-style: normal;
   font-weight: 700;
   src:
-    url('/static/fonts/avenir/avenir-bold.woff2') format('woff2'),
-    url('/static/fonts/avenir/avenir-bold.woff') format('woff');
+    url('/public/fonts/avenir/avenir-bold.woff2') format('woff2'),
+    url('/public/fonts/avenir/avenir-bold.woff') format('woff');
   text-rendering: optimizelegibility;
 }
 
@@ -48,8 +48,8 @@ $secondary-font: 'Poppins';
   font-style: normal;
   font-weight: 400;
   src:
-    url('/static/fonts/poppins/poppins-regular.woff2') format('woff2'),
-    url('/static/fonts/poppins/poppins-regular.woff') format('woff');
+    url('/public/fonts/poppins/poppins-regular.woff2') format('woff2'),
+    url('/public/fonts/poppins/poppins-regular.woff') format('woff');
   text-rendering: optimizelegibility;
 }
 
@@ -60,8 +60,8 @@ $secondary-font: 'Poppins';
   font-style: normal;
   font-weight: 600;
   src:
-    url('/static/fonts/poppins/poppins-semiBold.woff2') format('woff2'),
-    url('/static/fonts/poppins/poppins-semiBold.woff') format('woff');
+    url('/public/fonts/poppins/poppins-semiBold.woff2') format('woff2'),
+    url('/public/fonts/poppins/poppins-semiBold.woff') format('woff');
   text-rendering: optimizelegibility;
 }
 

@@ -11,7 +11,6 @@ module.exports = {
     path: path.resolve(__dirname, "../chp/static/"),
     clean: true,
     filename: "js/index.js",
-    publicPath: '/static/',
   },
   module: {
     rules: [
@@ -33,8 +32,16 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: "../[file]",
-          emit: false,
+          filename: "assets/fonts/[name][ext]",
+          
+        },
+      },
+      {
+        test: /\.(svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: "assets/svg/[name][ext]",
+          
         },
       },
     ],
