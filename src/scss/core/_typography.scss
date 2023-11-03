@@ -1,0 +1,239 @@
+/* -------------------------------------------*\
+  1. Loading Fonts
+\*------------------------------------------- */
+
+$primary-font: 'Avenir';
+$secondary-font: 'Poppins';
+
+/* Avenir Regular */
+@font-face {
+  font-display: swap;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('/static/fonts/avenir/avenir-regular.woff2') format('woff2'),
+    url('/static/fonts/avenir/avenir-regular.woff') format('woff');
+  text-rendering: optimizelegibility;
+}
+
+/* Avenir Semibold */
+@font-face {
+  font-display: swap;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: 600;
+  src:
+    url('/static/fonts/avenir/avenir-semibold.woff2') format('woff2'),
+    url('/static/fonts/avenir/avenir-semibold.woff') format('woff');
+  text-rendering: optimizelegibility;
+}
+
+/* Avenir Bold */
+@font-face {
+  font-display: swap;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('/static/fonts/avenir/avenir-bold.woff2') format('woff2'),
+    url('/static/fonts/avenir/avenir-bold.woff') format('woff');
+  text-rendering: optimizelegibility;
+}
+
+/* Poppins Regular */
+@font-face {
+  font-display: swap;
+  font-family: $secondary-font;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('/static/fonts/poppins/poppins-regular.woff2') format('woff2'),
+    url('/static/fonts/poppins/poppins-regular.woff') format('woff');
+  text-rendering: optimizelegibility;
+}
+
+/* Poppins Semibold */
+@font-face {
+  font-display: swap;
+  font-family: $secondary-font;
+  font-style: normal;
+  font-weight: 600;
+  src:
+    url('/static/fonts/poppins/poppins-semiBold.woff2') format('woff2'),
+    url('/static/fonts/poppins/poppins-semiBold.woff') format('woff');
+  text-rendering: optimizelegibility;
+}
+
+/* -------------------------------------------*\
+  2. Font Family
+\*------------------------------------------- */
+
+$font-family-primary: 'Avenir', arial, helvetica, sans-serif;
+$font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
+
+/* -------------------------------------------*\
+  3. Fundations
+\*------------------------------------------- */
+
+%base-typography {
+  color: $black-500;
+  font-style: normal;
+}
+
+%base-primary {
+  font-family: $font-family-primary;
+}
+
+%base-secondary {
+  font-family: $font-family-secondary;
+}
+
+%regular {
+  font-weight: 400;
+}
+
+%semibold {
+  font-weight: 600;
+}
+
+%bold {
+  font-weight: 700;
+}
+
+.title-large {
+  @extend %base-typography;
+  @extend %base-primary;
+  @extend %bold;
+
+  font-size: to-rem(26px);
+  letter-spacing: to-rem(-0.72px);
+  line-height: to-rem(48px);
+
+  @include viewport(tablet) {
+    font-size: to-rem(64px);
+    letter-spacing: to-rem(-1.28px);
+    line-height: to-rem(84px);
+  }
+}
+
+.title-h1 {
+  @extend %base-typography;
+  @extend %base-primary;
+  @extend %bold;
+
+  font-size: to-rem(52px);
+  letter-spacing: to-rem(-1.04px);
+  line-height: to-rem(48px);
+
+  @include viewport(tablet) {
+    font-size: to-rem(86px);
+    letter-spacing: to-rem(-1.72px);
+    line-height: to-rem(78px);
+  }
+}
+
+.title-h2 {
+  @extend %base-typography;
+  @extend %base-primary;
+  @extend %bold;
+
+  font-size: to-rem(40px);
+  letter-spacing: to-rem(-0.8px);
+  line-height: to-rem(40px);
+
+  @include viewport(tablet) {
+    font-size: to-rem(60px);
+    letter-spacing: to-rem(-1.2px);
+    line-height: to-rem(68px);
+  }
+}
+
+.title-h3 {
+  @extend %base-typography;
+  @extend %base-primary;
+  @extend %bold;
+
+  font-size: to-rem(36px);
+  letter-spacing: to-rem(-0.72px);
+  line-height: to-rem(36px);
+
+  @include viewport(tablet) {
+    font-size: to-rem(42px);
+    line-height: to-rem(52px);
+  }
+}
+
+.title-h4 {
+  @extend %base-typography;
+  @extend %base-primary;
+  @extend %bold;
+
+  font-size: to-rem(32px);
+  letter-spacing: to-rem(-0.64px);
+  line-height: to-rem(32px);
+
+  @include viewport(tablet) {
+    font-size: to-rem(34px);
+    letter-spacing: to-rem(-0.68px);
+    line-height: to-rem(48px);
+  }
+}
+
+.title-h5 {
+  @extend %base-typography;
+  @extend %base-primary;
+  @extend %regular;
+
+  font-size: to-rem(24px);
+  letter-spacing: to-rem(-0.48px);
+  line-height: to-rem(24px);
+
+  @include viewport(tablet) {
+    font-size: to-rem(28px);
+    letter-spacing: to-rem(-0.56px);
+    line-height: to-rem(36px);
+  }
+}
+
+.title-h6 {
+  @extend %base-typography;
+  @extend %base-secondary;
+  @extend %semibold;
+
+  font-size: to-rem(20px);
+  line-height: to-rem(20px);
+
+  @include viewport(tablet) {
+    font-size: to-rem(28px);
+    line-height: to-rem(36px);
+  }
+}
+
+.subtitle {
+  @extend %base-typography;
+  @extend %base-secondary;
+  @extend %semibold;
+
+  font-size: to-rem(28px);
+  line-height: to-rem(42px);
+}
+
+.button {
+  @extend %base-typography;
+  @extend %base-primary;
+  @extend %bold;
+
+  font-size: to-rem(20px);
+  letter-spacing: to-rem(-0.4px);
+  line-height: to-rem(40px);
+}
+
+.body {
+  @extend %base-typography;
+  @extend %base-secondary;
+  @extend %regular;
+
+  font-size: to-rem(18px);
+  line-height: to-rem(34px);
+}

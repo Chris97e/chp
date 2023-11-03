@@ -1,0 +1,68 @@
+/* -------------------------------------------*\
+  1. Colors modifiers
+\*------------------------------------------- */
+
+@each $name, $hex_code in $primary {
+  .color-primary-#{$name} {
+    color: $hex_code;
+  }
+}
+
+@each $name, $hex_code in $secondary {
+  .color-secondary-#{$name} {
+    color: $hex_code;
+  }
+}
+
+@each $name, $hex_code in $black {
+  .color-black-#{$name} {
+    color: $hex_code;
+  }
+}
+
+@each $name, $hex_code in $auxiliar {
+  .color-#{$name} {
+    color: $hex_code;
+  }
+}
+
+/* -------------------------------------------*\
+  2. Text modifiers
+\*------------------------------------------- */
+
+.regular {
+  @extend %regular;
+}
+
+.semibold {
+  @extend %semibold;
+}
+
+.bold {
+  @extend %bold;
+}
+
+/* -------------------------------------------*\
+  3. Shadows modifiers
+\*------------------------------------------- */
+
+@each $name, $shadow in map-get($shadows, 'light') {
+  .shadow-light-#{$name} {
+    box-shadow: $shadow;
+  }
+
+  %shadow-light-#{$name} {
+    box-shadow: $shadow;
+  }
+}
+
+@each $name, $shadow in map-get($shadows, 'dark') {
+  .shadow-light-#{$name} {
+    box-shadow: $shadow;
+    padding: 0;
+  }
+
+  %shadow-dark-#{$name} {
+    box-shadow: $shadow;
+  }
+}

@@ -1,5 +1,8 @@
 {
-  "extends": ["stylelint-config-standard-scss"],
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss"
+  ],
   "ignoreFiles": ["./chp/static/**/*.css"],
   "plugins": [
     "stylelint-declaration-block-no-ignored-properties",
@@ -32,13 +35,11 @@
         "ignore": ["custom-elements"]
       }
     ],
-    "scss/at-import-no-partial-leading-underscore": true,
     "scss/at-mixin-argumentless-call-parentheses": "always",
     "scss/at-mixin-parentheses-space-before": "never",
     "scss/at-rule-no-unknown": true,
-    "scss/at-rule-conditional-no-parentheses": false,
+    "scss/at-rule-conditional-no-parentheses": null,
     "scss/dollar-variable-colon-space-after": "always",
-    "string-quotes": "single",
     "media-feature-range-notation": "prefix"
   }
 }

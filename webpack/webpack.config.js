@@ -11,6 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, "../chp/static/"),
     clean: true,
     filename: "js/index.js",
+    publicPath: '/static/',
   },
   module: {
     rules: [
@@ -27,6 +28,14 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: "../[file]",
+          emit: false,
+        },
       },
     ],
   },

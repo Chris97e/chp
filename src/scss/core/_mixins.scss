@@ -1,0 +1,87 @@
+/* -------------------------------------------*\
+  1. Responsive
+\*------------------------------------------- */
+
+@mixin viewport($breakpoint) {
+  @if ($breakpoint == mobile-large) {
+    @media only screen and (min-width: $mobile-large) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == tablet) {
+    @media only screen and (min-width: $tablet) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == desktop) {
+    @media only screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == desktop-large) {
+    @media only screen and (min-width: $desktop-large) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-only-for($breakpoint) {
+  @if ($breakpoint == mobile) {
+    @media only screen and (min-width: 0) and (max-width: $tablet) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == tablet) {
+    @media only screen and (min-width: ($tablet + 1)) and (max-width: $desktop) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == desktop) {
+    @media only screen and (min-width: ($desktop + 1)) and (max-width: $desktop-large) {
+      @content;
+    }
+  }
+}
+
+/* -------------------------------------------*\
+    2. Layout
+\*------------------------------------------- */
+
+@mixin main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+}
+
+@mixin container {
+  display: flex;
+  width: 100vw;
+
+  @include viewport(tablet) {
+    max-width: $grid;
+    width: 100%;
+  }
+}
+
+.main {
+  @include main();
+}
+
+.container {
+  @include container();
+}
+
+/* -------------------------------------------*\
+    3. Utils functions
+\*------------------------------------------- */
+
+@function to-rem($size) {
+  @return calc($size / 16px * 1rem);
+}
