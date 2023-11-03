@@ -7,8 +7,9 @@ This document's purpose is to explain the development workflow.
 | Content | Description |
 | :------ | :---------- |
 | [1. Prerequisites](#1-prerequisites) | Explains what we need before start |
-| [2. Installation](#2-Installation) | Explains how to install the project on your machine |
+| [2. Installation](#2-installation) | Explains how to install the project on your machine |
 | [3. Daily Work](#3-development-workflow) | Quick cheatsheet of the different steps of the developement workflow |
+| [4. Troubleshoots](#4-troubleshoots) | Extra information for know troubleshoots |
 
 
 ### 1 Prerequisites
@@ -31,3 +32,9 @@ To install this project, you will need the project files (downloaded with git) a
 8. Run backend server with ```python3 manage.py runserver```
 9. In another terminal install our npm dependecies with ```npm i```
 10. Run our frontend copiler with ```npm run frontend```
+
+## 4 Troubleshoots
+Guide to resolve common problems.
+
+### 4.1 Problems adding custom fonts
+If you intend to include custom fonts, please ensure that they are placed inside the 'public/fonts/[font-name]' directory.

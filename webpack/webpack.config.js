@@ -8,8 +8,7 @@ module.exports = {
   mode: "development",
   entry: "./src/ts/app.ts",
   output: {
-    path: path.resolve(__dirname, "../chp/static/"),
-    clean: true,
+    path: path.resolve(__dirname, "../public/"),
     filename: "js/index.js",
   },
   module: {
@@ -32,7 +31,13 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: "assets/fonts/[name][ext]",
+          filename: (chunkData) => {
+            const path = chunkData.filename;
+            const type = path.match('/fonts\/(.*?)\/');
+
+            return `fonts/${type[1]}/[name][ext]`;
+          },
+          emit:false
           
         },
       },
@@ -40,8 +45,8 @@ module.exports = {
         test: /\.(svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: "assets/svg/[name][ext]",
-          
+          filename: "svg/[file]",
+          emit:false
         },
       },
     ],

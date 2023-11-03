@@ -19,6 +19,8 @@ npm-debug.log*
 /.pytest_cache/
 /storybook-static
 chp/static
+public/css
+public/js
 
 ### JetBrains
 .idea/
