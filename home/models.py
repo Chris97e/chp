@@ -5,3 +5,5 @@ from wagtail.models import Page
 
 class HomePage(Page):
     template = "pages/home.html"
+    max_count = 1
+    

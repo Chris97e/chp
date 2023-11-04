@@ -1,0 +1,24 @@
+.logo-chp {
+  height: to-rem(36px);
+  width: to-rem(72px);
+
+  &--xs {
+    height: to-rem(9px);
+    width: to-rem(18px);
+  }
+
+  &--s {
+    height: to-rem(16px);
+    width: to-rem(32px);
+  }
+
+  &--l {
+    height: to-rem(60px);
+    width: to-rem(120px);
+  }
+
+  &--xl {
+    height: to-rem(120px);
+    width: to-rem(240px);
+  }
+}
