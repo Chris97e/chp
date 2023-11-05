@@ -62,4 +62,7 @@ module.exports = {
       files: './src/ts/**/*.ts',
     }),
   ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
 };

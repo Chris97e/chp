@@ -17,9 +17,20 @@
     "@stylistic/ts",
     "@typescript-eslint"
   ],
-  "ignorePatterns": ["chp", "node_modules", "webpack"],
+  "ignorePatterns": ["public", "node_modules", "webpack"],
   "rules": {
     "quotes": ["error", "single"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-this-alias": "off",
+    "max-len": [
+      "error", {
+        "code": 82,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreStrings": true
+      }
+    ]
   }
 }

@@ -34,14 +34,10 @@
 </head>
 
 <body class=" {% block body_class %}{% endblock %}">
-
-    {% wagtailuserbar %}
-
-    {% block content %}{% endblock %}
-
-    {% block extra_js %}
-    {# Override this in templates to add extra javascript #}
-    {% endblock %}
+    {% include "components/header.tpl" %}
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
 </body>
 
 </html>

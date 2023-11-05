@@ -1,0 +1,14 @@
+.icon-button {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-radius: to-rem(8px);
+    display: flex;
+    justify-content: center;
+
+    &__icon {
+        fill: $black-400;
+        height: to-rem(36px);
+        width: to-rem(36px);
+    }
+}
