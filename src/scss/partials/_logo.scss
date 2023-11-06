@@ -1,6 +1,16 @@
 .logo-chp {
+  $self: &;
+
   height: to-rem(36px);
   width: to-rem(72px);
+
+  &__letter {
+    fill: $black-500;
+  }
+
+  &__dot {
+    fill: $primary-500;
+  }
 
   &--xs {
     height: to-rem(9px);
@@ -20,5 +30,35 @@
   &--xl {
     height: to-rem(120px);
     width: to-rem(240px);
+  }
+
+  &--white{
+    #{$self}__letter {
+      fill: $black-500;
+    }
+
+    #{$self}__dot {
+      fill: $primary-500;
+    }
+  }
+
+  &--black{
+    #{$self}__letter {
+      fill: $white;
+    }
+
+    #{$self}__dot {
+      fill: $primary-500;
+    }
+  }
+
+  &--green{
+    #{$self}__letter {
+      fill: $black-500;
+    }
+
+    #{$self}__dot {
+      fill: $white;
+    }
   }
 }

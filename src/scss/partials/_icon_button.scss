@@ -7,8 +7,12 @@
     justify-content: center;
 
     &__icon {
-        fill: $black-400;
-        height: to-rem(36px);
-        width: to-rem(36px);
+        fill: $black-500;
+        height: to-rem(38px);
+        width: to-rem(38px);
+    }
+
+    &:focus-visible {
+        @include focus($primary-700, 'small');
     }
 }

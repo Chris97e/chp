@@ -1,0 +1,63 @@
+.link-mobile {
+  $self: &;
+
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  overflow: hidden;
+  text-decoration: none;
+  width: fit-content;
+
+  &__icon {
+    fill: $black-500;
+    height: to-rem(32px);
+    margin-left: to-rem(18px);
+    opacity: 0;
+    transition:
+      opacity 200ms ease-in-out,
+      margin 200ms ease-in-out;
+    width: to-rem(32px);
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    #{$self}__icon {
+      margin-left: to-rem(12px);
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible {
+    @include focus($primary-700);
+  }
+
+  &--active {
+    font-size: to-rem(52px);
+    letter-spacing: to-rem(-1.04px);
+    line-height: to-rem(48px);
+
+    #{$self}__icon {
+      fill: $black-500;
+      height: to-rem(34px);
+      margin-left: to-rem(12px);
+      opacity: 1;
+      width: to-rem(34px);
+    }
+  }
+
+  &--small {
+    @include addorment-small();
+
+    padding: to-rem(4px) 0;
+
+    &:focus-visible {
+      @include focus($primary-700, 'small');
+    }
+
+    #{$self}__icon {
+      display: none;
+    }
+  }
+}

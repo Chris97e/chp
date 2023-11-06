@@ -71,9 +71,33 @@
 }
 
 /* -------------------------------------------*\
-    3. Utils functions
+    3. A11
+\*------------------------------------------- */
+
+@mixin focus-base($color: $black-500, $radius: 2px, $offset: 8px, $outline: 3px) {
+  border-radius: to-rem($radius);
+  outline: $outline solid $color;
+  outline-offset: to-rem($offset);
+}
+
+@mixin focus($color: $black-500, $size:'default') {
+  @if $size == 'default' {
+    @include focus-base($color, 2px, 8px, 3px);
+  }
+
+  @if $size == 'small' {
+    @include focus-base($color, 4px, 0, 2px);
+  }
+}
+
+/* -------------------------------------------*\
+    4. Utils functions
 \*------------------------------------------- */
 
 @function to-rem($size) {
+  @if $size == 0 {
+    @return 0; 
+  }
+
   @return calc($size / 16px * 1rem);
 }

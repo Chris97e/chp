@@ -101,7 +101,7 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   font-weight: 700;
 }
 
-.title-large {
+@mixin title-large {
   @extend %base-typography;
   @extend %base-primary;
   @extend %bold;
@@ -117,7 +117,7 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   }
 }
 
-.title-h1 {
+@mixin title-h1 {
   @extend %base-typography;
   @extend %base-primary;
   @extend %bold;
@@ -133,7 +133,7 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   }
 }
 
-.title-h2 {
+@mixin title-h2 {
   @extend %base-typography;
   @extend %base-primary;
   @extend %bold;
@@ -149,7 +149,8 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   }
 }
 
-.title-h3 {
+
+@mixin title-h3 {
   @extend %base-typography;
   @extend %base-primary;
   @extend %bold;
@@ -164,7 +165,8 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   }
 }
 
-.title-h4 {
+
+@mixin title-h4 {
   @extend %base-typography;
   @extend %base-primary;
   @extend %bold;
@@ -180,7 +182,7 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   }
 }
 
-.title-h5 {
+@mixin title-h5 {
   @extend %base-typography;
   @extend %base-primary;
   @extend %regular;
@@ -196,7 +198,7 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   }
 }
 
-.title-h6 {
+@mixin title-h6 {
   @extend %base-typography;
   @extend %base-secondary;
   @extend %semibold;
@@ -210,7 +212,7 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   }
 }
 
-.subtitle {
+@mixin subtitle {
   @extend %base-typography;
   @extend %base-secondary;
   @extend %semibold;
@@ -219,7 +221,7 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   line-height: to-rem(42px);
 }
 
-.button {
+@mixin button {
   @extend %base-typography;
   @extend %base-primary;
   @extend %bold;
@@ -229,11 +231,78 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   line-height: to-rem(40px);
 }
 
-.body {
+@mixin body {
   @extend %base-typography;
   @extend %base-secondary;
   @extend %regular;
 
   font-size: to-rem(18px);
   line-height: to-rem(34px);
+}
+
+@mixin addorment-small {
+  @extend %base-typography;
+  @extend %base-secondary;
+  @extend %bold;
+
+  font-size: to-rem(14px);
+  line-height: to-rem(26px);
+}
+
+@mixin link-mobile {
+  @extend %base-typography;
+  @extend %base-primary;
+  @extend %bold;
+
+  font-size: to-rem(36px);
+  letter-spacing: to-rem(-0.72px);
+  line-height: to-rem(36px);
+}
+
+.title-large {
+  @include title-large();
+}
+
+.title-h1 {
+  @include title-h1();
+}
+
+.title-h2 {
+ @include title-h2();
+}
+
+.title-h3 {
+  @include title-h3();
+}
+
+.title-h4 {
+  @include title-h4();
+}
+
+.title-h5 {
+  @include title-h5();
+}
+
+.title-h6 {
+  @include title-h6();
+}
+
+.subtitle {
+ @include subtitle();
+}
+
+.button {
+  @include button();
+}
+
+.body {
+  @include body();
+}
+
+.addorment-small {
+  @include addorment-small();
+}
+
+.link-mobile {
+  @include link-mobile();
 }

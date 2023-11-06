@@ -1,3 +1,4 @@
 export enum EVENTS {
-    load = 'load'
+  'load' = 'load',
+  'click' = 'click',
 }

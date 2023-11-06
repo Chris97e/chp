@@ -6,7 +6,7 @@ enum ATTRIBUTES {
   props = 'data-props',
 }
 
-let instance: null | any = null;
+let instance: null | Aplication = null;
 
 /**
  * Application (class)
