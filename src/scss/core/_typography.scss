@@ -41,6 +41,18 @@ $secondary-font: 'Poppins';
   text-rendering: optimizelegibility;
 }
 
+/* Poppins light */
+@font-face {
+  font-display: swap;
+  font-family: $secondary-font;
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url('/public/fonts/poppins/poppins-light.woff2') format('woff2'),
+    url('/public/fonts/poppins/poppins-light.woff') format('woff');
+  text-rendering: optimizelegibility;
+}
+
 /* Poppins Regular */
 @font-face {
   font-display: swap;
@@ -87,6 +99,10 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
 
 %base-secondary {
   font-family: $font-family-secondary;
+}
+
+%light {
+  font-weight: 300;
 }
 
 %regular {
@@ -208,6 +224,7 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
 
   @include viewport(tablet) {
     font-size: to-rem(28px);
+    font-weight: 400;
     line-height: to-rem(36px);
   }
 }
@@ -234,10 +251,15 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
 @mixin body {
   @extend %base-typography;
   @extend %base-secondary;
-  @extend %regular;
+  @extend %light;
 
+  color: $black-300;
   font-size: to-rem(18px);
   line-height: to-rem(34px);
+
+  @include viewport(tablet) {
+    font-size: to-rem(16px);
+  }
 }
 
 @mixin addorment-small {
@@ -257,6 +279,15 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
   font-size: to-rem(36px);
   letter-spacing: to-rem(-0.72px);
   line-height: to-rem(36px);
+}
+
+@mixin link-desktop {
+  @extend %base-typography;
+  @extend %base-secondary;
+  @extend %light;
+
+  font-size: to-rem(16px);
+  line-height: to-rem(30px);
 }
 
 .title-large {
@@ -305,4 +336,8 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
 
 .link-mobile {
   @include link-mobile();
+}
+
+.link-desktop {
+  @include link-desktop();
 }

@@ -1,18 +1,47 @@
 .icon-button {
-    align-items: center;
-    background-color: transparent;
-    border: none;
-    border-radius: to-rem(8px);
-    display: flex;
-    justify-content: center;
+  $self: &;
 
-    &__icon {
-        fill: $black-500;
-        height: to-rem(38px);
-        width: to-rem(38px);
+  align-items: center;
+  background-color: $white;
+  border: 1px solid $black-50;
+  border-radius: to-rem(8px);
+  display: flex;
+  justify-content: center;
+  padding: to-rem(3px);
+  transition:
+    box-shadow 200ms ease-in,
+    background-color 200ms ease-in-out;
+
+  &__icon {
+    fill: $black-400;
+    height: to-rem(32px);
+    transition:
+      fill 200ms ease-in-out;
+    width: to-rem(32px);
+  }
+
+  &:focus-visible {
+    @include focus($black-500);
+
+    #{$self}__icon {
+      fill: $black-500;
     }
+  }
+
+  &:hover {
+    box-shadow: $shadow-light-03;
+    cursor: pointer;
+
+    #{$self}__icon {
+      fill: $black-500;
+    }
+  }
+
+  &--no-border {
+    border: none;
 
     &:focus-visible {
-        @include focus($primary-700, 'small');
+      @include focus($black-500, 'small');
     }
+  }
 }

@@ -2,6 +2,7 @@
   $self: &;
 
   align-items: center;
+  border-radius: to-rem(4px);
   display: flex;
   flex-direction: row;
   height: fit-content;
@@ -27,6 +28,10 @@
       margin-left: to-rem(12px);
       opacity: 1;
     }
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   &:focus-visible {

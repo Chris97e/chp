@@ -46,7 +46,7 @@
   3. Shadows modifiers
 \*------------------------------------------- */
 
-@each $name, $shadow in map-get($shadows, 'light') {
+@each $name, $shadow in $shadows-light {
   .shadow-light-#{$name} {
     box-shadow: $shadow;
   }
@@ -56,7 +56,7 @@
   }
 }
 
-@each $name, $shadow in map-get($shadows, 'dark') {
+@each $name, $shadow in $shadows-dark {
   .shadow-light-#{$name} {
     box-shadow: $shadow;
     padding: 0;

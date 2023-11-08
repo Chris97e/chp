@@ -1,0 +1,93 @@
+.main-button {
+  $self: &;
+
+  align-items: center;
+  background-color: $black-500;
+  border: 1px solid $black-500;
+  border-radius: 8px;
+  color: $black-50;
+  display: flex;
+  padding: to-rem(8px) to-rem(16px) to-rem(8px) to-rem(24px);
+  transition:
+    box-shadow 200ms ease-in-out,
+    color 200ms ease-in-out;
+  width: fit-content;
+
+  &__icon-container {
+    align-items: center;
+    display: flex;
+    margin-left: to-rem(12px);
+    width: to-rem(calc(24px + 8px));
+  }
+
+  &__icon {
+    fill: $black-50;
+    height: to-rem(24px);
+    transition: transform 200ms ease-in-out;
+    width: to-rem(24px);
+  }
+
+
+  &:focus-visible {
+    @include focus($black-500);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: $black-300;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:focus,
+  &:active {
+    box-shadow: $shadow-light-02;
+    color: $white;
+
+    #{$self}__icon {
+      fill: $white;
+      transform: translateX(to-rem(6px));
+    }
+  }
+
+  &--secondary {
+    background-color: $white;
+    border: 1px solid $black-50;
+    color: $black-400;
+
+    #{$self}__icon {
+      fill: $black-400;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &:focus,
+    &:active {
+      color: $black-500;
+
+      #{$self}__icon {
+        fill: $black-500;
+      }
+    }
+  }
+
+  &--dark {
+    &:hover,
+    &:focus-visible,
+    &:focus,
+    &:active {
+      box-shadow: $shadow-dark-02;
+    }
+
+    &:focus-visible {
+      @include focus($black-50);
+    }
+  }
+
+  &--small {
+    padding: to-rem(0) to-rem(16px) to-rem(0) to-rem(24px);
+  }
+}

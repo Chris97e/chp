@@ -35,6 +35,6 @@ export class Header extends Component {
     });
     this.closeMenu_.addEventListener(EVENTS.click, () => {
       this.el.classList.remove(CLASSES.menuMobileActive);
-  });
+    });
   }
 }

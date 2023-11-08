@@ -1,0 +1,12 @@
+.nav-social-networks {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+
+  &__links {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: to-rem(16px);
+  }
+}

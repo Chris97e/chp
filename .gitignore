@@ -19,6 +19,7 @@ npm-debug.log*
 /.pytest_cache/
 /storybook-static
 chp/static
+home/migrations
 public/css
 public/js
 

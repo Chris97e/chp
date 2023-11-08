@@ -1,0 +1,81 @@
+.banner-slide {
+  @include main();
+
+  $self: &;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: to-rem(220px);
+  position: relative;
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(32px);
+  }
+
+  &__content {
+    @include container();
+
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(56px);
+  }
+
+  &__background {
+    bottom: 0;
+    display: flex;
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(24px);
+  }
+
+  &__body {
+    max-width: 32ch;
+
+    @include viewport(tablet) {
+      max-width: 38ch;
+    }
+  }
+
+  &--first {
+    
+  }
+
+  &--second {
+    background-color: $primary-500;
+
+    #{$self}__body {
+      color: $primary-1000;
+    }
+  }
+
+  &--third {
+    background-color: $black-500;
+
+    .title-h1 {
+      color: $white;
+    }
+
+    #{$self}__body {
+      color: $black-200;
+    }
+  }
+
+  &__wave {
+    aspect-ratio: 1;
+    bottom: 0;
+    max-width: 700px;
+    position: absolute;
+    right: 0;
+    width: 50vw;
+  }
+}

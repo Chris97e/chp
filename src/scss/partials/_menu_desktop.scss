@@ -1,0 +1,13 @@
+.nav-desktop {
+  align-items: center;
+  display: flex;
+
+  &__links {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: to-rem(4px);
+
+    @include only-in-desktop(flex);
+  }
+}

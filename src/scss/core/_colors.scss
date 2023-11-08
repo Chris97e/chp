@@ -47,6 +47,7 @@ $black: (
 /* Auxiliar color */
 $auxiliar: (
   'white': #fff,
+  'grey': #F2F2F2,
 );
 
 /* Primary variables */
@@ -85,3 +86,4 @@ $black-500: map.get($black, 500);
 
 /* Auxiliar color */
 $white: map.get($auxiliar, 'white');
+$grey: map.get($auxiliar, 'grey');

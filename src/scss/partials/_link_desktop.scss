@@ -1,0 +1,22 @@
+.link-desktop {
+  border-radius: to-rem(6px);
+  color: $black-200;
+  padding: to-rem(4px) to-rem(12px);
+  text-decoration: none;
+  transition: color 200ms ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    color: $black-500;
+  }
+
+  &:focus-visible {
+    @include focus($size:'small');
+  }
+
+  &--active {
+    color: $black-500;
+    font-weight: 600;
+    letter-spacing: to-rem(0.54px);
+  }
+}

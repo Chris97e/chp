@@ -13,6 +13,8 @@
   width: 100vw;
   z-index: $elevation-10;
 
+  @include only-in-mobile();
+
   &__main {
     display: flex;
     flex-direction: column;

@@ -8,10 +8,10 @@
 {% endcomment %}
 
 {% with block_class="nav-mobile" %}
-<nav class="{{block_class}}">
+<nav class="{{block_class}}" aria-hidden="true">
     <span class="{{block_class|element:'main'}}">
         <div class="{{block_class|element:'close-container'}}">
-            {% include "partials/icon-button.tpl" with icon="icon-close" custom_class=block_class|element:'close'%}
+            {% include "partials/icon-button.tpl" with icon="icon-close" no_border="true" custom_class=block_class|element:'close'%}
         </div>
         <div class="{{block_class|element:'menu-container'}}">
             <p class="{{block_class|element:'date'}} addorment-small">2023</p>

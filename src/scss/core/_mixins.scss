@@ -62,6 +62,8 @@
 
 @mixin container {
   display: flex;
+  padding-left: 24px;
+  padding-right: 24px;
   width: 100vw;
 
   @include viewport(tablet) {
@@ -74,19 +76,22 @@
     3. A11
 \*------------------------------------------- */
 
-@mixin focus-base($color: $black-500, $radius: 2px, $offset: 8px, $outline: 3px) {
-  border-radius: to-rem($radius);
+@mixin focus-base($color: $black-500, $offset: 8px, $outline: 3px) {
   outline: $outline solid $color;
   outline-offset: to-rem($offset);
 }
 
-@mixin focus($color: $black-500, $size:'default') {
+@mixin focus($color: $black-500, $size: 'default') {
+  @if $size == 'large' {
+    @include focus-base($color, 8px, 2px);
+  }
+
   @if $size == 'default' {
-    @include focus-base($color, 2px, 8px, 3px);
+    @include focus-base($color, 6px, 2px);
   }
 
   @if $size == 'small' {
-    @include focus-base($color, 4px, 0, 2px);
+    @include focus-base($color, 0, 2px);
   }
 }
 
@@ -96,8 +101,28 @@
 
 @function to-rem($size) {
   @if $size == 0 {
-    @return 0; 
+    @return 0;
   }
 
   @return calc($size / 16px * 1rem);
+}
+
+@mixin only-in-desktop($display: block) {
+  display: none;
+  visibility: hidden;
+
+  @include viewport(desktop) {
+    display: $display;
+    visibility: visible;
+  }
+}
+
+@mixin only-in-mobile($display: block) {
+  display: $display;
+  visibility: visible;
+
+  @include viewport(desktop) {
+    display: none;
+    visibility: hidden;
+  }
 }

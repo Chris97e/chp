@@ -1,5 +1,5 @@
 /* -------------------------------------------*\
-    1. Global styles
+    1. Global variables
 \*------------------------------------------- */
 html {
   scroll-behavior: smooth;
@@ -20,3 +20,9 @@ ul {
   overflow: hidden;
   touch-action: none;
 }
+
+/* -------------------------------------------*\
+    2. Global styles
+\*------------------------------------------- */
+
+$header-mobile-height: 82px;
