@@ -7,4 +7,4 @@ def modifier(block, arg):
   if arg == '':
     return ''
   else:
-    return ' ' + block + '--' + arg
+    return ' ' + block + '--' + str(arg)

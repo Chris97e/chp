@@ -7,4 +7,4 @@ def element(block, arg):
   if arg == '':
     return ''
   else:
-    return block + '__' + arg
+    return block + '__' + str(arg)

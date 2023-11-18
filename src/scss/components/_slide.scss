@@ -6,8 +6,13 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding-top: to-rem(220px);
-  position: relative;
+  overflow: hidden;
+  padding-top: to-rem(146px);
+  position: sticky;
+    top: 0;
+  @include viewport(tablet){
+    padding-top: to-rem(220px);
+  }
 
   &__copy {
     display: flex;
@@ -46,20 +51,20 @@
     }
   }
 
-  &--first {
-    
+  &--1 {
+    border-radius: 8px;
   }
 
-  &--second {
-    background-color: $primary-500;
+  &--2 {
+    opacity: 0;
 
     #{$self}__body {
       color: $primary-1000;
     }
   }
 
-  &--third {
-    background-color: $black-500;
+  &--3 {
+    opacity: 0;
 
     .title-h1 {
       color: $white;
@@ -70,12 +75,47 @@
     }
   }
 
-  &__wave {
+  &__wave-container {
     aspect-ratio: 1;
-    bottom: 0;
-    max-width: 700px;
+    position: relative;
+    right: -50vw;
+    width: 100vw;
+  }
+
+  &__wave-green {
     position: absolute;
-    right: 0;
-    width: 50vw;
+    transform: scale(1.2);
+    top: 10%;
+  }
+
+  &__wave-black {
+    position: absolute;
+  }
+
+  &__wave-container-2 {
+    aspect-ratio: 1;
+    position: relative;
+    right: -50vw;
+    bottom: -50vw;
+    transform: scale(0);
+    width: 100vw;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(360deg); /* Comienza desde 0 grados de rotación */
+    }
+    to {
+      transform: rotate(0deg); /* Termina en 360 grados de rotación, una rotación completa */
+    }
+  }
+
+  @keyframes rotate2 {
+    from {
+      transform: rotate(0deg); /* Comienza desde 0 grados de rotación */
+    }
+    to {
+      transform: rotate(360deg); /* Termina en 360 grados de rotación, una rotación completa */
+    }
   }
 }

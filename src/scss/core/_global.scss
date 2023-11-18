@@ -2,7 +2,7 @@
     1. Global variables
 \*------------------------------------------- */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth ;
 }
 
 * {
@@ -19,6 +19,10 @@ ul {
 .lock-scroll {
   overflow: hidden;
   touch-action: none;
+}
+
+body {
+  background-color: $white;
 }
 
 /* -------------------------------------------*\

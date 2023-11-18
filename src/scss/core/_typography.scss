@@ -259,7 +259,18 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
 
   @include viewport(tablet) {
     font-size: to-rem(16px);
+    line-height: to-rem(28px);
   }
+}
+
+@mixin body-small {
+  @extend %base-typography;
+  @extend %base-secondary;
+  @extend %light;
+
+  color: $black-300;
+  font-size: to-rem(16px);
+  line-height: to-rem(28px);
 }
 
 @mixin addorment-small {
@@ -328,6 +339,10 @@ $font-family-secondary: 'Poppins', arial, helvetica, sans-serif;
 
 .body {
   @include body();
+}
+
+.body-small {
+  @include body-small();
 }
 
 .addorment-small {

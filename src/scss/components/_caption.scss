@@ -1,0 +1,71 @@
+.caption {
+  @include container();
+
+  flex-direction: row;
+  gap: to-rem(24px);
+  justify-content: space-between;
+  padding-bottom: to-rem(24px);
+  padding-top: to-rem(24px);
+  position: relative;
+
+  @include viewport(tablet) {
+    gap: to-rem(48px);
+    padding-bottom: to-rem(48px);
+    padding-top: to-rem(48px);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+
+    @include viewport(tablet) {
+      justify-content: center;
+    }
+  }
+
+  &__title-text {
+    div:last-child {
+      @include viewport(tablet) {
+        margin-top: to-rem(-8px);
+      }
+    }
+  }
+
+  &__divider {
+    background-color: $black-500;
+    border-radius: to-rem(8px);
+    display: none;
+    width: to-rem(2px);
+
+    @include viewport(tablet) {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(56px);
+    max-width: 32ch;
+
+    @include viewport(tablet) {
+      align-items: center;
+      flex-direction: row;
+      gap: to-rem(24px);
+      justify-content: space-between;
+      max-width: unset;
+      width: 100%;
+    }
+
+    button {
+      min-width: fit-content;
+    }
+  }
+
+  &__description {
+    @include viewport(tablet) {
+      max-width: 32ch;
+      padding: to-rem(4px) 0;
+    }
+  }
+}

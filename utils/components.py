@@ -16,6 +16,7 @@ class BannerBlock(blocks.StructBlock):
         label = "Banner"
 
 class CaptionBlock(blocks.StructBlock):
+    eyebrow = blocks.CharBlock(required=True, help_text="Add your eyebrow", max_length=50)
     title = blocks.CharBlock(required=True, help_text="Add your title", max_length=100)
     description = blocks.TextBlock(required=True, help_text="Add your description", max_length=300)
 

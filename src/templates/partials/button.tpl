@@ -22,11 +22,15 @@
 
 {% with block_class="main-button" %}
   {% if title %}
-    <button class="button {{ block_class }}{% if size %}{{ block_class|modifier:size }}{% endif %}{% if type %}{{ block_class|modifier:type }}{% endif %}{% if theme %}{{ block_class|modifier:theme }}{% endif %} {% firstof custom_class '' %}">
+    <a class="button {{ block_class }}{% if size %}{{ block_class|modifier:size }}{% endif %}{% if type %}{{ block_class|modifier:type }}{% endif %}{% if theme %}{{ block_class|modifier:theme }}{% endif %} {% firstof custom_class '' %}"
+      {% if href %}
+        href="{{href}}"
+      {% endif %}
+    >
       {{ title }}
       <div class="{{block_class|element:'icon-container'}}">
         {% include "partials/icon.tpl" with icon=icon class_name=block_class|element:'icon' %}
       </div>
-    </button>
+    </a>
   {% endif %}
 {% endwith %}
