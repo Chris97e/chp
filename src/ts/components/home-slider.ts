@@ -108,7 +108,6 @@ export class HomeSlider extends Component {
       vpWidth / (wave.clientWidth / 2),
       vpHeight / (wave.clientHeight / 2)
     );
-    console.log(scaleFactor);
     return scaleFactor + 0.6;
   }
 }

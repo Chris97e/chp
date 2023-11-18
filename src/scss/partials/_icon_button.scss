@@ -44,4 +44,29 @@
       @include focus($black-500, 'small');
     }
   }
+
+  &--green {
+    background-color: $primary-500;
+    border-color: $primary-700;
+  }
+
+  &--black {
+    background-color: $black-500;
+    border-color: $black-400;
+
+    #{$self}__icon {
+      fill: $black-50;
+    }
+
+    &:hover,
+    &:focus-visible {
+      #{$self}__icon {
+        fill: $white;
+      }
+    }
+
+    &:focus-visible {
+      @include focus($white);
+    }
+  }
 }

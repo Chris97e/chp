@@ -6,21 +6,17 @@ export class EventBus {
   /**
    * Adds a listener
    */
-  static listen(event: keyof typeof EVENTS, callback: (data?: any) => void) {
-    if (EventBus.eventSubscriptions[event]) {
+  static listen(event: EVENTS, callback: (data?: any) => void) {
+    if (!EventBus.eventSubscriptions[event]) {
       EventBus.eventSubscriptions[event] = [];
     }
-
     EventBus.eventSubscriptions[event].push(callback);
   }
 
   /**
    * Remove a listener
    */
-  static removeEventListener(
-    event: keyof typeof EVENTS,
-    callback: (data?: any) => void
-  ) {
+  static removeEventListener(event: EVENTS, callback: (data?: any) => void) {
     if (!EventBus.eventSubscriptions[event]) {
       return;
     }
@@ -34,7 +30,7 @@ export class EventBus {
   /**
    * Dispatch an event.
    */
-  static dispatchEvent(event: keyof typeof EVENTS, data:any = {}) {
+  static dispatchEvent(event: EVENTS, data: any = {}) {
     if (!EventBus.eventSubscriptions[event]) {
       return;
     }

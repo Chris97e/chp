@@ -1,4 +1,6 @@
 .link-desktop {
+  $self: &;
+
   border-radius: to-rem(6px);
   color: $black-200;
   padding: to-rem(4px) to-rem(12px);
@@ -18,5 +20,26 @@
     color: $black-500;
     font-weight: 600;
     letter-spacing: to-rem(0.54px);
+  }
+
+  &--green {
+    color: $primary-900;
+
+    #{$self}--active {
+      color: $black-500;
+    }
+  }
+
+  &--black {
+    color: $black-300;
+
+    &:hover,
+    &:focus-visible {
+      color: $white;
+    }
+
+    #{$self}--active {
+      color: $white;
+    }
   }
 }
