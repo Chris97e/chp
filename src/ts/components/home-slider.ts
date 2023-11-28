@@ -1,6 +1,8 @@
 import { Component } from './component';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { EventBus } from '../services/event-bus';
+import { EVENTS } from '../constants/events';
 
 enum SELECTORS {
   'WAVE_GREEN' = '.banner-slide__wave-green',
@@ -8,6 +10,7 @@ enum SELECTORS {
   'WAVE_BLACK_2' = '.banner-slide__wave-container-2',
   'SLIDE_2' = '.banner-slide--2',
   'SLIDE_3' = '.banner-slide--3',
+  'HEADER' = '.header'
 }
 
 export class HomeSlider extends Component {
@@ -25,17 +28,35 @@ export class HomeSlider extends Component {
 
   setUpComponent_() {
     gsap.registerPlugin(ScrollTrigger);
+    this.slide2Animation_();
+    this.slide3Animation_();
+  }
+
+  slide2Animation_ () {
     gsap.to(SELECTORS.WAVE_GREEN, {
       scrollTrigger: {
         trigger: SELECTORS.SLIDE_2,
         toggleActions: 'restart pause reverse pause',
-        scrub: true,
+        scrub: 1,
         start: '-=80%',
         end: 'top',
         snap: 1,
-        markers: true,
       },
       scale: this.getScaleWaveFactor_(SELECTORS.WAVE_GREEN),
+      duration: 2,
+    });
+
+  
+    gsap.to(SELECTORS.SLIDE_2, {
+      scrollTrigger: {
+        trigger: SELECTORS.SLIDE_2,
+        toggleActions: 'restart pause reverse pause',
+        scrub: 1,
+        start: '-=20%',
+        end: 'top',
+        snap: 1,
+      },
+      opacity: 1,
       duration: 2,
     });
 
@@ -43,40 +64,33 @@ export class HomeSlider extends Component {
       scrollTrigger: {
         trigger: SELECTORS.SLIDE_2,
         toggleActions: 'restart pause reverse pause',
-        scrub: true,
+        scrub: 1,
         start: '-=80%',
         end: '-=10%',
+        onLeave: () => {
+          EventBus.dispatchEvent(EVENTS.themeGreen, {});
+        },
+        onLeaveBack: () => {
+          EventBus.dispatchEvent(EVENTS.themeWite, {});
+        },
         snap: 1,
-        markers: true,
       },
       scale: 0,
       right: '-50%',
       duration: 6,
     });
 
-    gsap.to(SELECTORS.SLIDE_2, {
-      scrollTrigger: {
-        trigger: SELECTORS.SLIDE_2,
-        toggleActions: 'restart pause reverse pause',
-        scrub: true,
-        start: '-=20%',
-        end: 'top',
-        snap: 1,
-        markers: true,
-      },
-      opacity: 1,
-      duration: 2,
-    });
+  }
 
+  slide3Animation_() {
     gsap.to(SELECTORS.WAVE_BLACK_2, {
       scrollTrigger: {
         trigger: SELECTORS.SLIDE_3,
         toggleActions: 'restart pause reverse pause',
-        scrub: true,
+        scrub: 1,
         start: '-=70%',
         end: 'top',
         snap: 1,
-        markers: true,
       },
       scale: this.getScaleWaveFactor_(SELECTORS.WAVE_BLACK_2),
       duration: 2,
@@ -86,11 +100,16 @@ export class HomeSlider extends Component {
       scrollTrigger: {
         trigger: SELECTORS.SLIDE_3,
         toggleActions: 'restart pause reverse pause',
-        scrub: true,
+        scrub: 1,
         start: '-=20%',
+        onLeave: () => {
+          EventBus.dispatchEvent(EVENTS.themeBlack, {});
+        },
+        onLeaveBack: () => {
+          EventBus.dispatchEvent(EVENTS.themeGreen, {});
+        },
         end: 'top',
         snap: 1,
-        markers: true,
       },
       opacity: 1,
       duration: 2,

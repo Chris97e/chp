@@ -28,6 +28,20 @@
   }
 }
 
+@mixin respond-from-to($min-width, $max-width: 0) {
+  @if $max-width > 0 {
+    @media only screen and (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+      @content;
+    }
+  }
+
+  @else {
+    @media only screen and (min-width: #{$min-width}) {
+      @content;
+    }
+  }
+}
+
 @mixin respond-only-for($breakpoint) {
   @if ($breakpoint == mobile) {
     @media only screen and (min-width: 0) and (max-width: $tablet) {
@@ -125,4 +139,14 @@
     display: none;
     visibility: hidden;
   }
+}
+
+/* -------------------------------------------*\
+    5. Divider
+\*------------------------------------------- */
+
+@mixin divider() {
+  background-color: $black-500;
+  border-radius: to-rem(8px);
+  width: to-rem(2px);
 }

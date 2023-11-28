@@ -28,6 +28,4 @@
 		{% include "partials/button.tpl" with title='View all' icon='icon-arrow-right' only %}
 	</div>
 </section>
-
-<div style="height: 200vh;"></div>
 {% endwith %}
