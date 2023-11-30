@@ -12,7 +12,8 @@ class HomePage(Page):
     body = StreamField([
         ("Banner", components.BannerBlock()),
         ("Caption", components.CaptionBlock()),
-        ("Costumers", components.CostumersBlock())
+        ("Companies", components.CompaniesBlock()),
+        ("Testimonies", components.TestimoniesBlock())
     ], use_json_field=True, null=True, blank=True)
 
     content_panels = Page.content_panels + [

@@ -63,3 +63,9 @@ $shadow-dark-07: map.get($shadows-dark, 07);
 $shadow-dark-08: map.get($shadows-dark, 08);
 $shadow-dark-09: map.get($shadows-dark, 09);
 $shadow-dark-10: map.get($shadows-dark, 10);
+
+/* -------------------------------------------*\
+  5. Shadows Utils
+\*------------------------------------------- */
+
+$shadow-card: 0 0 100px 10px rgba($black-100, 0.20);

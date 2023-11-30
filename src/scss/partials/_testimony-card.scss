@@ -1,0 +1,47 @@
+.testimony-card {
+  align-items: center;
+  background-color: $white;
+  border-radius: to-rem(16px);
+  box-shadow: $shadow-card;
+  display: flex;
+  gap: to-rem(32px);
+  padding: to-rem(16px);
+  width: fit-content;
+
+  &__photo {
+    border-radius: to-rem(16px);
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(8px);
+    height: fit-content;
+  }
+
+  &__title {
+    font-size: to-rem(20px);
+    font-weight: 600;
+    line-height: to-rem(20px);
+  }
+
+  &__position {
+    color: $black-300;
+    font-size: to-rem(16px);
+    font-weight: 400;
+    line-height: to-rem(28px);
+  }
+
+  &__testimony {
+    color: $black-200;
+    font-size: to-rem(16px);
+    line-height: to-rem(28px);
+    width: 24ch;
+  }
+}

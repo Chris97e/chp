@@ -1,0 +1,61 @@
+.testimonies {
+  @include container();
+
+  align-items: flex-end;
+  flex-direction: column;
+  gap: to-rem(56px);
+  justify-content: center;
+  padding-block: to-rem(32px);
+  position: relative;
+
+  @include viewport(tablet) {
+    align-items: center;
+    padding-block: to-rem(72px);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(6px);
+
+    @include viewport(tablet) {
+      gap: 0;
+    }
+
+    & span:first-child {
+      color: $black-400;
+    }
+  }
+
+  &__icon-holder {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: $elevation-negative;
+  }
+
+  &__icon {
+    fill: $black-50;
+
+    @include viewport(tablet) {
+      height: auto;
+      width: to-rem(432px);
+    }
+  }
+
+  &__elements {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(56px);
+    position: relative;
+    width: 100%;
+
+    @include viewport(tablet) {
+      display: grid;
+      gap: to-rem(64px) to-rem(68px); 
+      grid-template-columns: repeat(2, 1fr);
+      max-width: fit-content;
+    }
+  }
+}

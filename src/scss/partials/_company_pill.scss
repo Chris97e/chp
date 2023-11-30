@@ -1,0 +1,54 @@
+.company-pill {
+  $self: &;
+
+  align-items: center;
+  border-radius: to-rem(120px);
+  display: flex;
+  height: to-rem(56px);
+  justify-content: center;
+  position: relative;
+  width: to-rem(56px);
+
+  &--add {
+    background-color: $primary-500;
+
+    #{$self}__shadow {
+      background-color: $primary-500;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    fill: $black-500;
+    height: 80%;
+    width: 80%;
+  } 
+
+  &__image {
+    border-radius: to-rem(120px);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__shadow {
+    filter: blur(to-rem(50px));
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    opacity: 0.36;
+    position: absolute;
+    top: 0;
+    transition: opacity ease-in-out 400ms, filter ease-in-out 400ms;
+    width: 100%;
+    z-index: $elevation-negative;
+  }
+
+  &:hover {
+    #{$self}__shadow {
+      filter: blur(to-rem(70px));
+      opacity: 0.8;
+    }
+  }
+}
