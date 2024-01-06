@@ -32,7 +32,7 @@
     @include viewport(tablet) {
       display: flex;
       flex-direction: column;
-      gap: to-rem(38px);
+      gap: to-rem(24px);
     }
   }
 

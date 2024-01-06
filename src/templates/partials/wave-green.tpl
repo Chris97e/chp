@@ -1,5 +1,7 @@
-{% comment %} # @description: Wave animated # @param {string} class_name: class
-name of the svg {% endcomment %}
+{% comment %}
+# @description: Wave animated 
+  # @param {string} class_name: classname of the svg
+{% endcomment %}
 
 <svg class="{% if class_name %}{{ class_name }}{% endif %}" viewBox="0 0 820 820" xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
@@ -17,5 +19,4 @@ name of the svg {% endcomment %}
         M637.598 233.959C677.218 294.267 703.182 363.719 699.685 435.809C695.996 511.869 683.74 605.025 617.751 643.126C550.406 682.01 469.746 607.766 392.194 613.348C329.327 617.874 279.631 680.999 217.265 671.953C146.072 661.626 76.0312 622.866 37.842 561.949C-1.22903 499.626 -11.6593 416.879 14.1487 347.958C38.161 283.832 122.268 270.023 166.68 217.882C215.168 160.956 212.192 56.8836 282.876 32.4641C352.432 8.43413 420.46 71.7899 484.408 108.114C543.317 141.577 600.408 177.348 637.598 233.959Z
         "></animate>
   </path>
-</svg>  
-  
+</svg>

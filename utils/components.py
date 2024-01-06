@@ -57,3 +57,13 @@ class TestimoniesBlock(blocks.StructBlock):
         template = "components/testimonies.tpl"
         icon = "comment"
         label= "Testimonies"
+        
+class ActionBanner(blocks.StructBlock):
+    eyebrow = blocks.CharBlock(required=True, help_text="Eyebrow", max_length=20)
+    title = blocks.CharBlock(required=True, help_text="Text", max_length=32)
+    button = blocks.CharBlock(required=True, help_text="Button text", max_length=32)
+
+    class Meta: 
+        template = "components/action-banner.tpl"
+        icon = "link-external"
+        label= "Action Banner"

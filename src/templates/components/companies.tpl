@@ -39,6 +39,7 @@
 		<p class="{{block_class|element:'description'}} body">
 			{{ self.description }}
 		</p>
+
 		{% include "partials/button.tpl" with title='Join us' icon='icon-arrow-right' custom_class=block_class|element:'button' only %}
 	</div>
 </section>

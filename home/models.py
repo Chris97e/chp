@@ -13,7 +13,8 @@ class HomePage(Page):
         ("Banner", components.BannerBlock()),
         ("Caption", components.CaptionBlock()),
         ("Companies", components.CompaniesBlock()),
-        ("Testimonies", components.TestimoniesBlock())
+        ("Testimonies", components.TestimoniesBlock()),
+        ("ActionBanner", components.ActionBanner())
     ], use_json_field=True, null=True, blank=True)
 
     content_panels = Page.content_panels + [
