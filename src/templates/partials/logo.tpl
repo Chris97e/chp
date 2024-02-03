@@ -1,4 +1,3 @@
-{% load static %}
 {% load modifier %}
 
 {% comment %}
@@ -17,7 +16,7 @@
 {% endcomment %}
 
 {% with block_class="logo-chp" %}
-  <svg role="img" class="{{ block_class }}{% if size %}{{ block_class|modifier:size }}{% endif %}{% if over %}{{ block_class|modifier:over }}{% endif %}" viewBox="0 0 120 60">
+  <svg role="img" class="{{ block_class }}{% if size %}{{ block_class|modifier:size }}{% endif %}{% if over %}{{ block_class|modifier:over }}{% endif %} {% firstof custom_class '' %}" viewBox="0 0 120 60">
     <path
         class="logo-chp__dot"
         d="M113.5 55C116.538 55 119 52.5376 119 49.5C119 46.4625 116.538 44 113.5 44C110.462 44 108 46.4625 108 49.5C108 52.5376 110.462 55 113.5 55Z"

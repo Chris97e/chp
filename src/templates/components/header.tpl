@@ -1,5 +1,3 @@
-{% load modifier %}
-{% load static %}
 {% load element %}
 
 {% comment %}

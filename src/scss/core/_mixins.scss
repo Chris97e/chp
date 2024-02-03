@@ -76,8 +76,8 @@
 
 @mixin container {
   display: flex;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
   width: 100vw;
 
   @include viewport(tablet) {

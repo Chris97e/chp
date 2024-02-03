@@ -1,4 +1,3 @@
-{% load static %}
 {% load element %}
 {% load modifier %}
 

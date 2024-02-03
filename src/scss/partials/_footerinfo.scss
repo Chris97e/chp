@@ -1,0 +1,79 @@
+.footerinfo {
+  $self: &;
+  @include container();
+
+  padding-block: to-rem(32px);
+  padding-top: to-rem(56px);
+  position: relative;
+
+  @include viewport(tablet) {
+    justify-content: flex-end;
+    padding-block: to-rem(64px);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(42px);
+    width: 100%;
+
+    @include viewport(tablet) {
+      width: 50%;
+    }
+  }
+
+  &__contact,
+  &__navegation {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(24px);
+  }
+
+  &__contact {
+    @include viewport (tablet) {
+      gap: to-rem(48px);
+    }
+  }
+
+  &__navegation {
+    #{$self}__links {
+      @include viewport (desktop) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(8px);
+  }
+
+  &__social-networks {
+    align-items: center;
+    display: flex;
+    gap: to-rem(24px);
+    justify-content: center;
+
+    @include viewport(tablet) {
+      justify-content: flex-start;
+    }
+
+    @include viewport(desktop) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__logo {
+    @include viewport(tablet) {
+      left: to-rem(32px);
+      position: absolute;
+      width: to-rem(100px) !important;
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-weight: 700;
+  }
+}

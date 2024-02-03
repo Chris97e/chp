@@ -1,0 +1,12 @@
+.footer {
+  @include main();
+
+  background-color: $black-500;
+  border-radius: to-rem(16px) to-rem(16px) 0 0;
+  margin-top: to-rem(-24px);
+
+  @include viewport(tablet) {
+    border-radius: 0;
+    margin-top: 0;
+  }
+}

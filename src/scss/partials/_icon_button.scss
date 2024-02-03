@@ -9,8 +9,9 @@
   justify-content: center;
   padding: to-rem(3px);
   transition:
-    box-shadow 200ms ease-in,
-    background-color 200ms ease-in-out;
+    box-shadow 400ms ease-in,
+    border-color 400ms ease-in,
+    background-color 400ms ease-in-out;
 
   &__icon {
     fill: $black-400;
@@ -60,6 +61,8 @@
 
     &:hover,
     &:focus-visible {
+      border-color: $black-300;
+
       #{$self}__icon {
         fill: $white;
       }

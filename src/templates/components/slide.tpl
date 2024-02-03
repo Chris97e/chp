@@ -7,7 +7,7 @@
 {% endcomment %}
 
 {% with block_class="banner-slide" %}
-<li class="{{block_class}} {{block_class|modifier:loop_counter}} {% if custom_class %}{{custom_class}}{% endif %}"
+<li class="{{block_class}} {{block_class|modifier:loop_counter}} {% firstof custom_class '' %}"
   {% if id %}
     id="{{id}}"
   {% endif %}

@@ -37,9 +37,12 @@
 
 <body class=" {% block body_class %}{% endblock %}">
     {% include "components/header.tpl" %}
+    
     <main class="main">
         {% block content %}{% endblock %}
     </main>
+
+    {% include "components/footer.tpl" %}
 </body>
 
 </html>

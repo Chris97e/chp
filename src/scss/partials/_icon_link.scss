@@ -1,0 +1,61 @@
+.icon-link {
+  $self: &;
+
+  align-items: center;
+  border-radius: to-rem(4px);
+  display: flex;
+  gap: to-rem(12px);
+  padding: to-rem(6px) to-rem(8px);
+  text-decoration: none;
+
+  &__text {
+    color: $black-100;
+    transition: color 400ms ease-in-out;
+  }
+
+  &__icon {
+    fill: $white;
+    height: to-rem(24px);
+    width: to-rem(24px);
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    text-decoration-color: $white;
+
+    #{$self}__text {
+      color: $white;
+    }
+  }
+
+  &:focus-visible {
+    @include focus($white, 'small');
+  }
+
+  &--list {
+    @include viewport(tablet) {
+      border-radius: 0;
+      border-top: 1px solid $black-400;
+      padding: to-rem(24px) 0;
+      transition: border-color 400ms ease-in-out;
+
+      &:hover,
+      &:focus {
+        border-top: 1px solid $white;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    #{$self}__text {
+      @include viewport(tablet) {
+        font-size: to-rem(20px);
+        letter-spacing: to-rem(-0.48px);
+        line-height: to-rem(24px);
+      }
+    }
+  }
+}

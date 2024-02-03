@@ -1,6 +1,4 @@
-{% load static %}
 {% load element %}
-{% load modifier %}
 
 {% comment %}
 # @description: Menu desktop
