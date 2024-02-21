@@ -1,4 +1,4 @@
-.banner-slide {
+.home-banner-slide {
   @include main();
 
   $self: &;
@@ -9,15 +9,10 @@
   overflow: hidden;
   padding-top: to-rem(146px);
   position: sticky;
-    top: 0;
-  @include viewport(tablet){
-    padding-top: to-rem(220px);
-  }
+  top: 0;
 
-  &__copy {
-    display: flex;
-    flex-direction: column;
-    gap: to-rem(32px);
+  @include viewport(tablet) {
+    padding-top: to-rem(220px);
   }
 
   &__content {
@@ -25,34 +20,47 @@
 
     display: flex;
     flex-direction: column;
-    gap: to-rem(56px);
   }
 
-  &__background {
-    bottom: 0;
-    display: flex;
-    height: 100vh;
-    left: 0;
+  &__word {
+    position: relative;
+  }
+
+  &__word-emphasis {
     position: absolute;
-    width: 100vw;
+    width: 0;
+    height: to-rem(20px);
+    border-radius: to-rem(16px);
+    background-color: $white;
+    z-index: $elevation-negative;
+    top: 46%;
+    left: -10%;
   }
 
-  &__head {
-    display: flex;
-    flex-direction: column;
-    gap: to-rem(24px);
+  &__subtitle {
+    margin-top: to-rem(24px);
+
+    @include viewport(tablet) {
+      margin-top: to-rem(16px);
+    }
   }
 
   &__body {
+    margin-top: to-rem(32px);
     max-width: 32ch;
 
     @include viewport(tablet) {
+      margin-top: to-rem(48px);
       max-width: 38ch;
     }
   }
 
-  &--1 {
-    border-radius: 8px;
+  &__button {
+    margin-top: to-rem(56px);
+
+    @include viewport(tablet) {
+      margin-top: to-rem(46px);
+    }
   }
 
   &--2 {
@@ -77,47 +85,29 @@
 
   &__wave-container {
     aspect-ratio: 1;
-    position: relative;
-    right: -50vw;
-    width: 100vw;
-  }
-
-  &__wave-green {
+    bottom: 0;
     position: absolute;
-    top: 10%;
-    transform: scale(1.2);
-  }
+    right: -25%;
+    width: 300px;
 
-  &__wave-black {
-    position: absolute;
+    @include viewport(tablet) {
+      bottom: -25%;
+      width: 500px;
+    }
+
+    @include viewport(desktop) {
+      width: 820px;
+      right: -25%;
+      bottom: -50%;
+    }
   }
 
   &__wave-container-2 {
-    aspect-ratio: 1;
-    bottom: -50vw;
-    position: relative;
-    right: -50vw;
     transform: scale(0);
-    width: 100vw;
   }
 
-  @keyframes rotate {
-    from {
-      transform: rotate(360deg); /* Comienza desde 0 grados de rotación */
-    }
-
-    to {
-      transform: rotate(0deg); /* Termina en 360 grados de rotación, una rotación completa */
-    }
-  }
-
-  @keyframes rotate2 {
-    from {
-      transform: rotate(0deg); /* Comienza desde 0 grados de rotación */
-    }
-
-    to {
-      transform: rotate(360deg); /* Termina en 360 grados de rotación, una rotación completa */
-    }
+  &__wave-black,
+  &__wave-green {
+    position: absolute;
   }
 }

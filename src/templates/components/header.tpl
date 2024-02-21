@@ -5,7 +5,7 @@
 {% endcomment %}
 
 {% with block_class="header" %}
-<header class="{{block_class}}" data-comp="Header">
+<header class="{{block_class}} header--hide-on-scroll-down" data-comp="Header">
     <div class="{{block_class|element:'left'}}">
         {% include "partials/logo.tpl" %}
         {% include "partials/menu-desktop.tpl" %}

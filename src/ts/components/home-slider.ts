@@ -3,14 +3,18 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { EventBus } from '../services/event-bus';
 import { EVENTS } from '../constants/events';
+import { getBreakpoint } from '../utils/utils';
+import { BP_NAMES } from '../constants/breakpoints';
 
 enum SELECTORS {
-  'WAVE_GREEN' = '.banner-slide__wave-green',
-  'WAVE_BLACK' = '.banner-slide__wave-black',
-  'WAVE_BLACK_2' = '.banner-slide__wave-container-2',
-  'SLIDE_2' = '.banner-slide--2',
-  'SLIDE_3' = '.banner-slide--3',
-  'HEADER' = '.header'
+  'WAVE_GREEN' = '.home-banner-slide__wave-green-1',
+  'WAVE_BLACK' = '.home-banner-slide__wave-black-1',
+  'WAVE_BLACK_2' = '.home-banner-slide__wave-container-2',
+  'SLIDE_1' = '.home-banner-slide--1',
+  'SLIDE_2' = '.home-banner-slide--2',
+  'SLIDE_3' = '.home-banner-slide--3',
+  'HEADER' = '.header',
+  'EMPHASIS' = '.home-banner-slide__word-emphasis'
 }
 
 export class HomeSlider extends Component {
@@ -28,11 +32,12 @@ export class HomeSlider extends Component {
 
   setUpComponent_() {
     gsap.registerPlugin(ScrollTrigger);
+
     this.slide2Animation_();
     this.slide3Animation_();
   }
 
-  slide2Animation_ () {
+  slide2Animation_() {
     gsap.to(SELECTORS.WAVE_GREEN, {
       scrollTrigger: {
         trigger: SELECTORS.SLIDE_2,
@@ -46,7 +51,6 @@ export class HomeSlider extends Component {
       duration: 2,
     });
 
-  
     gsap.to(SELECTORS.SLIDE_2, {
       scrollTrigger: {
         trigger: SELECTORS.SLIDE_2,
@@ -57,6 +61,19 @@ export class HomeSlider extends Component {
         snap: 1,
       },
       opacity: 1,
+      duration: 2,
+    });
+
+    gsap.to(SELECTORS.EMPHASIS, {
+      scrollTrigger: {
+        trigger:SELECTORS.SLIDE_2,
+        toggleActions: 'restart pause reverse pause',
+        scrub: 1,
+        start: 'top ',
+        end: 'bottom +=50%',
+        snap: 1,
+      },
+      width: '120%',
       duration: 2,
     });
 
@@ -79,7 +96,6 @@ export class HomeSlider extends Component {
       right: '-50%',
       duration: 6,
     });
-
   }
 
   slide3Animation_() {
@@ -122,11 +138,24 @@ export class HomeSlider extends Component {
 
     const vpWidth = window.innerWidth;
     const vpHeight = window.innerHeight;
+    const currentBP = getBreakpoint();
+    const waveWidthVisible = 4;
+    let waveHeightVisible = 1;
+
+    if (currentBP == BP_NAMES.TABLET) {
+      waveHeightVisible = 4;
+    }
+
+    if (currentBP == BP_NAMES.DESKTOP || currentBP == BP_NAMES.LARGE_DESKTOP) {
+       waveHeightVisible = 2;
+    }
 
     const scaleFactor = Math.max(
-      vpWidth / (wave.clientWidth / 2),
-      vpHeight / (wave.clientHeight / 2)
+      vpWidth / (wave.clientWidth / waveWidthVisible),
+      vpHeight / (wave.clientHeight / waveHeightVisible)
     );
-    return scaleFactor + 0.6;
+    
+    console.log(scaleFactor);
+    return scaleFactor;
   }
 }

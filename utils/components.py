@@ -6,9 +6,9 @@ from wagtail.snippets.blocks import SnippetChooserBlock
 class BannerBlock(blocks.StructBlock):
 
     slides = blocks.ListBlock(blocks.StructBlock([
-        ('title', blocks.RichTextBlock(required=True, help_text="Add your title", max_length=160)),
+        ('title', blocks.TextBlock(required=True, help_text="Add your title", max_length=160, features=['link'])),
+        ('subtitle', blocks.TextBlock(required=False, help_text="Add your subtitle", max_length=100)),
         ('body', blocks.RichTextBlock(required=True, help_text="Add your description", max_length=160)),
-        ('subtitle', blocks.CharBlock(required=False, help_text="Add your subtitle", max_length=100)),
         ('lottie', ImageChooserBlock(required=False, help_text="select your lottie")),
     ]))
     

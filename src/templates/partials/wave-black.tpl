@@ -1,8 +1,11 @@
-{% comment %} # @description: Wave animated # @param {string} class_name: class
-name of the svg {% endcomment %}
+{% comment %} 
+# @description: Wave animated # @param {string} class_name: class name of the svg 
+# @param {string} class_name: classname of the svg
+# @param {string} loop_counter: classname of the svg
+{% endcomment %}
 
-<svg class="{% if class_name %}{{ class_name }}{% endif %}" viewBox="0 0 820 820" xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+<svg class="{% if class_name %}{{ class_name }}{% endif %} {% if class_name and loop_counter %}{{ class_name }}-{{loop_counter}}{% endif %}" viewBox="0 0 690 690" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" id="blobSvg">
   <path fill="#050505">
     <animate attributeName="d" dur="8000ms" repeatCount="indefinite" values="
         M345.306 74.2896C408.493 66.7294 475.662 43.0642 531.547 73.5068C589.621 105.142 619.877 171.11 639.164 234.366C658.181 296.739 670.541 368.252 638.78 425.202C608.443 479.596 531.555 480.238 481.425 517.199C430.714 554.588 408.278 639.553 345.306 641.582C282.644 643.6 253.058 563.472 202.661 526.179C152.936 489.384 77.6827 481.493 52.5642 424.964C27.035 367.51 51.3598 300.116 76.632 242.549C100.017 189.279 139.549 145.387 188.854 114.509C235.635 85.2127 290.5 80.8471 345.306 74.2896Z;
@@ -15,4 +18,3 @@ name of the svg {% endcomment %}
         "></animate>
   </path>
 </svg>
-  

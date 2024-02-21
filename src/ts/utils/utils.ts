@@ -1,3 +1,4 @@
+import { BP_NAMES, BREAKPOINTS } from '../constants/breakpoints';
 import { SYSTEM_ERRORS } from '../constants/errors';
 
 const errorWarn = (
@@ -21,4 +22,22 @@ const createObjectFromString = (text: string | null): object => {
   return newObject;
 };
 
-export { createObjectFromString, errorWarn };
+const getBreakpoint = (): string => {
+  const vpWidth = window.innerWidth;
+
+  if (vpWidth < BREAKPOINTS.TABLET) {
+    return BP_NAMES.MOBILE;
+  }
+
+  if (vpWidth < BREAKPOINTS.DESKTOP) {
+    return BP_NAMES.TABLET;
+  }
+
+  if (vpWidth < BREAKPOINTS.LARGE_DESKTOP) {
+    return BP_NAMES.DESKTOP;
+  }
+
+  return BP_NAMES.LARGE_DESKTOP;
+};
+
+export { createObjectFromString, errorWarn, getBreakpoint };
